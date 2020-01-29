@@ -4,7 +4,7 @@ server.port: ${SERVER_PORT:8080} # Server HTTP port.
 ---
 spring:
   application:
-    name: spring-boot-mvc-jpa-sample
+    name: spring-boot-freemaker-sample
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:local}
   cloud:

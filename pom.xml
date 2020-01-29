@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cjrequena.sample</groupId>
-    <artifactId>spring-boot-mvc-jpa-sample</artifactId>
+    <artifactId>spring-boot-freemaker-sample</artifactId>
     <!--    <packaging>pom</packaging>-->
     <version>1.0-SNAPSHOT</version>
     <properties>
@@ -203,7 +203,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>spring-boot-mvc-jpa-sample</finalName>
+        <finalName>spring-boot-freemaker-sample</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
