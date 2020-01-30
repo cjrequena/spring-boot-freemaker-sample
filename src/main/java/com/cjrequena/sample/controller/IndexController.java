@@ -5,13 +5,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * <p>
+ * <p>
+ * <p>
+ * <p>
+ *
+ * @author cjrequena
+ */
 @Controller
-public class HelloWorldController {
+public class IndexController {
 
-  @GetMapping({"/", "/hello"})
-  public String hello(Model model,
-    @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
+  @GetMapping({"/", "/index"})
+  public String index(Model model, @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
     model.addAttribute("name", name);
-    return "hello";
+    return "index";
   }
 }

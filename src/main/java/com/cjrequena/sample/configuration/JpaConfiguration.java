@@ -19,9 +19,6 @@ import javax.sql.DataSource;
  * <p>
  *
  * @author cjrequena
- * @version 1.0
- * @see
- * @since JDK1.8
  */
 @Configuration
 @EnableJpaRepositories(
