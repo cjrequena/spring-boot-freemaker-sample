@@ -1,6 +1,8 @@
 package com.cjrequena.sample.db.entity;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,14 +19,21 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * The persistent class for the album database table.
+ * <p>
+ * <p>
+ * <p>
+ * <p>
+ * @author cjrequena
+ * @version 1.0
+ * @since JDK1.8
+ * @see
  *
  */
-
-@Data
 @Entity
 @Table(name = "album")
-@NamedQuery(name = "AlbumEntity.findAll", query = "SELECT a FROM AlbumEntity a")
+@Setter
+@Getter
+@EqualsAndHashCode
 public class AlbumEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -35,33 +44,5 @@ public class AlbumEntity implements Serializable {
 
 	@Column(nullable = false, length = 160)
 	private String title;
-
-	// bi-directional many-to-one association to ArtistEntity
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ArtistId", nullable = false)
-	private ArtistEntity artist;
-
-	// bi-directional many-to-one association to TrackEntity
-	@OneToMany(mappedBy = "album")
-	private List<TrackEntity> tracks;
-
-	public AlbumEntity() {
-	}
-
-
-
-	public TrackEntity addTrack(TrackEntity track) {
-		getTracks().add(track);
-		track.setAlbum(this);
-
-		return track;
-	}
-
-	public TrackEntity removeTrack(TrackEntity track) {
-		getTracks().remove(track);
-		track.setAlbum(null);
-
-		return track;
-	}
 
 }
