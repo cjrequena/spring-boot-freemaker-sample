@@ -72,27 +72,46 @@ spring.datasource.jdbcUrl: jdbc:mysql://localhost:3306/chinook?useSSL=false
 spring.datasource.driver-class-name: com.mysql.cj.jdbc.Driver
 spring.datasource.username: root
 spring.datasource.password: root
+# https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
+spring.datasource.pool-name: HikariPool
+spring.datasource.connection-timeout: 20000
+spring.datasource.minimum-idle: 5
+spring.datasource.maximum-pool-size: 12
+spring.datasource.idle-timeout: 300000
+spring.datasource.max-lifetime: 1200000
+spring.datasource.auto-commit: false
+
 #POSTGRES
 #spring.datasource.postgres.type: com.zaxxer.hikari.HikariDataSource
 #spring.datasource.postgres.jdbcUrl: jdbc:postgresql://localhost:5432/chinook
 #spring.datasource.postgres.driver-class-name: org.postgresql.Driver
 #spring.datasource.postgres.username: postgres
 #spring.datasource.postgres.password: postgres
+# https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
+#spring.datasource.postgres.pool-name: HikariPool
+#spring.datasource.postgres.connection-timeout: 20000
+#spring.datasource.postgres.minimum-idle: 5
+#spring.datasource.postgres.maximum-pool-size: 12
+#spring.datasource.postgres.idle-timeout: 300000
+#spring.datasource.postgres.max-lifetime: 1200000
+#spring.datasource.postgres.auto-commit: false
+
 #MYSQL
 #spring.datasource.mysql.type: com.zaxxer.hikari.HikariDataSource
 #spring.datasource.mysql.jdbcUrl: jdbc:mysql://localhost:3306/chinook?useSSL=false
 #spring.datasource.mysql.driver-class-name: com.mysql.cj.jdbc.Driver
 #spring.datasource.mysql.username: root
 #spring.datasource.mysql.password: root
-
 # https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
-spring.datasource.postgres.pool-name: HikariPool
-spring.datasource.postgres.connection-timeout: 20000
-spring.datasource.postgres.minimum-idle: 5
-spring.datasource.postgres.maximum-pool-size: 12
-spring.datasource.postgres.idle-timeout: 300000
-spring.datasource.postgres.max-lifetime: 1200000
-spring.datasource.postgres.auto-commit: false
+#spring.datasource.mysql.pool-name: HikariPool
+#spring.datasource.mysql.connection-timeout: 20000
+#spring.datasource.mysql.minimum-idle: 5
+#spring.datasource.mysql.maximum-pool-size: 12
+#spring.datasource.mysql.idle-timeout: 300000
+#spring.datasource.mysql.max-lifetime: 1200000
+#spring.datasource.mysql.auto-commit: false
+
+
 # JPA specific configs
 #spring.jpa.properties.hibernate.connection.provider_class: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
 spring.jpa.properties.hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
